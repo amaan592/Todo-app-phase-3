@@ -67,4 +67,5 @@ class ApiService {
   }
 }
 
-export default new ApiService(API_BASE_URL);
+const apiService = new ApiService(API_BASE_URL);
+export default apiService;

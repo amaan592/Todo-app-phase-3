@@ -47,10 +47,6 @@ const TaskList = () => {
     }
   };
 
-  const handleTaskCreated = (newTask) => {
-    setTasks(prev => [...prev, newTask]);
-  };
-
   const handleTaskUpdated = (updatedTask) => {
     setTasks(prev => prev.map(task => task.id === updatedTask.id ? updatedTask : task));
   };
