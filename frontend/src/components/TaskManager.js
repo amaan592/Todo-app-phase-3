@@ -5,8 +5,8 @@ import './TaskManager.css';
 
 const TaskManager = () => {
   return (
-    <div className="task-manager">
-      <div className="container">
+    <div className='task-manager'>
+      <div className='container'>
         <TaskForm />
         <TaskList />
       </div>

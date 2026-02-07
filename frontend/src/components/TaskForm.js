@@ -42,47 +42,47 @@ const TaskForm = ({ onTaskCreated }) => {
   };
 
   return (
-    <div className="task-form-container" role="region" aria-labelledby="form-heading">
-      <h2 id="form-heading">Create New Task</h2>
-      <form onSubmit={handleSubmit} className="task-form" aria-describedby={error ? "form-error" : undefined}>
-        <div className="form-group">
-          <label htmlFor="title">Title *</label>
+    <div className='task-form-container' role='region' aria-labelledby='form-heading'>
+      <h2 id='form-heading'>Create New Task</h2>
+      <form onSubmit={handleSubmit} className='task-form' aria-describedby={error ? 'form-error' : undefined}>
+        <div className='form-group'>
+          <label htmlFor='title'>Title *</label>
           <input
-            type="text"
-            id="title"
+            type='text'
+            id='title'
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Enter task title"
+            placeholder='Enter task title'
             disabled={loading}
             required
-            aria-required="true"
+            aria-required='true'
             aria-invalid={!!error}
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="description">Description</label>
+        <div className='form-group'>
+          <label htmlFor='description'>Description</label>
           <textarea
-            id="description"
+            id='description'
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            placeholder="Enter task description (optional)"
+            placeholder='Enter task description (optional)'
             disabled={loading}
-            rows="3"
-            aria-describedby={error ? "form-error" : undefined}
+            rows='3'
+            aria-describedby={error ? 'form-error' : undefined}
           />
         </div>
 
         {error && (
-          <div id="form-error" className="error-message" role="alert">
+          <div id='form-error' className='error-message' role='alert'>
             {error}
           </div>
         )}
 
         <button
-          type="submit"
+          type='submit'
           disabled={loading}
-          className="submit-button"
+          className='submit-button'
           aria-busy={loading}
         >
           {loading ? 'Creating...' : 'Create Task'}

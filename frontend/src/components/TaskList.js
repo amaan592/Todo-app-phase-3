@@ -103,39 +103,39 @@ const TaskList = () => {
   };
 
   if (loading) {
-    return <div className="loading">Loading tasks...</div>;
+    return <div className='loading'>Loading tasks...</div>;
   }
 
   if (error) {
-    return <div className="error-message">Error: {error}</div>;
+    return <div className='error-message'>Error: {error}</div>;
   }
 
   return (
-    <div className="task-list-container" role="region" aria-labelledby="task-list-heading">
-      <div className="task-list-header">
-        <h2 id="task-list-heading">Task List ({tasks.length})</h2>
-        <div className="filter-controls">
-          <label htmlFor="filter-select">Filter:</label>
+    <div className='task-list-container' role='region' aria-labelledby='task-list-heading'>
+      <div className='task-list-header'>
+        <h2 id='task-list-heading'>Task List ({tasks.length})</h2>
+        <div className='filter-controls'>
+          <label htmlFor='filter-select'>Filter:</label>
           <select
-            id="filter-select"
+            id='filter-select'
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
-            className="filter-select"
-            aria-label="Filter tasks by status"
+            className='filter-select'
+            aria-label='Filter tasks by status'
           >
-            <option value="all">All Tasks</option>
-            <option value="pending">Pending Only</option>
-            <option value="completed">Completed Only</option>
+            <option value='all'>All Tasks</option>
+            <option value='pending'>Pending Only</option>
+            <option value='completed'>Completed Only</option>
           </select>
         </div>
       </div>
 
       {recentlyDeleted && (
-        <div className="undo-notification" role="status" aria-live="polite">
+        <div className='undo-notification' role='status' aria-live='polite'>
           <span>Task "{recentlyDeleted.title}" deleted</span>
           <button
             onClick={handleUndoDelete}
-            className="undo-button"
+            className='undo-button'
             aria-label={`Restore task ${recentlyDeleted.title}`}
           >
             Undo
@@ -144,13 +144,13 @@ const TaskList = () => {
       )}
 
       {filteredTasks.length === 0 ? (
-        <div className="no-tasks" role="status">
+        <div className='no-tasks' role='status'>
           {filter === 'all'
             ? 'No tasks available. Create your first task!'
             : `No ${filter} tasks available.`}
         </div>
       ) : (
-        <div className="task-list" role="list" aria-label={`List of ${filter} tasks`}>
+        <div className='task-list' role='list' aria-label={`List of ${filter} tasks`}>
           {filteredTasks.map(task => (
             <TaskItem
               key={task.id}

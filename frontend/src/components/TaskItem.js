@@ -82,46 +82,46 @@ const TaskItem = ({ task, onTaskUpdated, onTaskDeleted }) => {
   };
 
   return (
-    <div className={`task-item ${task.status.toLowerCase()}`} role="article" aria-labelledby={`task-title-${task.id}`}>
+    <div className={`task-item ${task.status.toLowerCase()}`} role='article' aria-labelledby={`task-title-${task.id}`}>
       {isEditing ? (
-        <div className="task-edit-form">
-          <div className="form-group">
+        <div className='task-edit-form'>
+          <div className='form-group'>
             <input
-              type="text"
+              type='text'
               id={`edit-title-${task.id}`}
               value={editTitle}
               onChange={(e) => setEditTitle(e.target.value)}
-              placeholder="Task title"
+              placeholder='Task title'
               disabled={loading}
-              className="edit-title-input"
+              className='edit-title-input'
               aria-label={`Edit title for task ${task.title}`}
             />
           </div>
 
-          <div className="form-group">
+          <div className='form-group'>
             <textarea
               id={`edit-description-${task.id}`}
               value={editDescription}
               onChange={(e) => setEditDescription(e.target.value)}
-              placeholder="Task description"
+              placeholder='Task description'
               disabled={loading}
-              rows="2"
-              className="edit-description-input"
+              rows='2'
+              className='edit-description-input'
               aria-label={`Edit description for task ${task.title}`}
             />
           </div>
 
           {error && (
-            <div className="error-message" role="alert">
+            <div className='error-message' role='alert'>
               {error}
             </div>
           )}
 
-          <div className="edit-actions">
+          <div className='edit-actions'>
             <button
               onClick={handleEdit}
               disabled={loading}
-              className="save-button"
+              className='save-button'
               aria-label={`Save changes to task ${task.title}`}
             >
               {loading ? 'Saving...' : 'Save'}
@@ -134,7 +134,7 @@ const TaskItem = ({ task, onTaskUpdated, onTaskDeleted }) => {
                 setError('');
               }}
               disabled={loading}
-              className="cancel-button"
+              className='cancel-button'
               aria-label={`Cancel editing task ${task.title}`}
             >
               Cancel
@@ -143,13 +143,13 @@ const TaskItem = ({ task, onTaskUpdated, onTaskDeleted }) => {
         </div>
       ) : (
         <>
-          <div className="task-header">
-            <div className="task-title">
+          <div className='task-header'>
+            <div className='task-title'>
               <h3 id={`task-title-${task.id}`}>
                 <strong>{task.title}</strong>
               </h3>
             </div>
-            <div className="task-status" aria-label={`Status: ${task.status}`}>
+            <div className='task-status' aria-label={`Status: ${task.status}`}>
               <span className={`status-badge ${task.status.toLowerCase()}`}>
                 {task.status}
               </span>
@@ -157,16 +157,16 @@ const TaskItem = ({ task, onTaskUpdated, onTaskDeleted }) => {
           </div>
 
           {task.description && (
-            <div className="task-description" id={`task-desc-${task.id}`}>
+            <div className='task-description' id={`task-desc-${task.id}`}>
               {task.description}
             </div>
           )}
 
-          <div className="task-meta" aria-label={`Created: ${formatDate(task.created_at)}`}>
+          <div className='task-meta' aria-label={`Created: ${formatDate(task.created_at)}`}>
             <small>Created: {formatDate(task.created_at)}</small>
           </div>
 
-          <div className="task-actions">
+          <div className='task-actions'>
             <button
               onClick={handleStatusToggle}
               disabled={loading}
@@ -179,7 +179,7 @@ const TaskItem = ({ task, onTaskUpdated, onTaskDeleted }) => {
             <button
               onClick={() => setIsEditing(true)}
               disabled={loading}
-              className="edit-button"
+              className='edit-button'
               aria-label={`Edit task ${task.title}`}
             >
               Edit
@@ -188,7 +188,7 @@ const TaskItem = ({ task, onTaskUpdated, onTaskDeleted }) => {
             <button
               onClick={openDeleteModal}
               disabled={loading}
-              className="delete-button"
+              className='delete-button'
               aria-label={`Delete task ${task.title}`}
             >
               Delete
@@ -196,7 +196,7 @@ const TaskItem = ({ task, onTaskUpdated, onTaskDeleted }) => {
           </div>
 
           {error && (
-            <div className="error-message" role="alert">
+            <div className='error-message' role='alert'>
               {error}
             </div>
           )}
